@@ -39,9 +39,15 @@
                 }}
             {{/or}}
         {{/if}}
+        
         <a href="{{url}}"
            class="card-figure__link"
-           aria-label="{{name}},{{> components/products/product-aria-label}}"
+           aria-label="
+           {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+               {{name}},{{> components/products/product-aria-label}}
+           {{else}}
+               {{name}}
+           {{/or}}"
            {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
         >
             <div class="card-img-container">
@@ -103,7 +109,12 @@
             <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p>
         {{/if}}
         <h3 class="card-title">
-            <a aria-label="{{name}},{{> components/products/product-aria-label}}"
+            <a aria-label="
+               {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                   {{name}},{{> components/products/product-aria-label}}
+               {{else}}
+                   {{name}}
+               {{/or}}"
                href="{{url}}"
                {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{name}}</a>
         </h3>
