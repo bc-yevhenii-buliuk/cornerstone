@@ -6,7 +6,12 @@
     <figure class="listItem-figure">
         <a href="{{url}}"
            class="listItem-figure__link"
-           aria-label="{{name}},{{> components/products/product-aria-label}}"
+           aria-label="
+           {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+               {{name}},{{> components/products/product-aria-label}}
+           {{else}}
+               {{name}}
+           {{/or}}"
            {{#if settings.data_tag_enabled}}
            data-event-type="product-click"
            {{/if}}
@@ -53,7 +58,12 @@
                 {{/if}}
                 <h4 class="listItem-title">
                     <a href="{{url}}"
-                    aria-label="{{name}},{{> components/products/product-aria-label}}"
+                    aria-label="
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{name}},{{> components/products/product-aria-label}}
+                    {{else}}
+                        {{name}}
+                    {{/or}}"
                     {{#if settings.data_tag_enabled}}
                     data-event-type="product-click"
                     {{/if}}
