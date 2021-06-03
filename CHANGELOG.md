@@ -1,7 +1,7 @@
 # Changelog
 
 ## Draft
-- Prices should not appear if the value is set to "Hidden for guests". [#2068](https://github.com/bigcommerce/cornerstone/pull/2068)
+- Payment methods are not centered in the Cart page and Cart preview form. [#2072](https://github.com/bigcommerce/cornerstone/pull/2072)
 - Added settings for payment banners. [#2021](https://github.com/bigcommerce/cornerstone/pull/2021)
 - Use https:// for schema markup. [#2039](https://github.com/bigcommerce/cornerstone/pull/2039)
 - Update focus tooltip styles contrast to achieve accessibility AA Complaince. [#2047](https://github.com/bigcommerce/cornerstone/pull/2047)
