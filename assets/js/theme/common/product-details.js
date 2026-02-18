@@ -92,7 +92,13 @@ export default class ProductDetails extends ProductDetailsBase {
         });
 
         this.updateProductAttributes(productAttributesData);
-        this.updateView(productAttributesData, null);
+
+        if (productAttributesData
+            && typeof productAttributesData === 'object'
+            && Object.keys(productAttributesData).length > 0) {
+            this.updateView(productAttributesData, null);
+        }
+
         bannerUtils.dispatchProductBannerEvent(productAttributesData);
 
         $productOptionsElement.show();
